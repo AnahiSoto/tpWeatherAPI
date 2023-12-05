@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito+Sans:opsz,wght@6..12,900&family=Poppins:wght@300&family=Raleway:wght@200&display=swap');
+
+html {
+    overflow-x: hidden;
+}
+
+ * {
+     font-family: 'Montserrat', sans-serif;
+ }
+
+
+.containerr {    
+    display: flex;
+    height: 100%;       
+}
+
+.look {
+    display: flex;
+    flex-direction: row;
+    align-items: center;       
+    margin-bottom: 10px;
+}
+
+.data{
+    margin-bottom: 10px;
+}
+
+input {
+    font-size: 18px;
+    border-radius: 50px;
+    background-color: rgb(246, 246, 246);
+    border: none; 
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+input:hover {
+    border: none;
+}
+
+.title{
+    margin-top: 40px;
+    margin-bottom: 5px;
+    color: #6998db;    
+    font-size: 35px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.title2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    color: #6998db;    
+    font-size: 35px;
+    font-family: 'Nunito Sans', sans-serif;
+}
