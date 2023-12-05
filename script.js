@@ -19,7 +19,6 @@ document.getElementById("clear").addEventListener("click", () => {
     clearUI();
 });
 
-
 function getCurrentDate() {   
 
     const timeElement = document.getElementById("clock");
@@ -109,12 +108,18 @@ function weatherHistory (weatherArray) {
                 document.getElementById("history").hidden = true;
                 document.getElementById("compare").hidden = true;                                               
             }, 200) ;
+
             return;
         }        
         clearUI2();              
             return await response.json();        
         } catch (e) {            
-            messageUI("Bad Connection! Try Again");        
+            messageUI("Bad Connection! Try Again"); 
+               setTimeout(() => {
+                document.getElementById("clear").hidden = true;
+                document.getElementById("history").hidden = true;
+                document.getElementById("compare").hidden = true;                                               
+            }, 200) ; 
         }                 
     }
 
@@ -139,18 +144,6 @@ function addWeatherUI(weather) {
     `;
     weatherList.appendChild(el);
 
-    //const weather
-//     <div id = "weather-widget" class="weather-widget"> 
-//     <div class="weather-widget-content">
-//         <div id="clock" class="clock"></div>
-//         <div id="date" class="current-date"></div>
-//         <img src="https://cdn.dribbble.com/users/2120934/screenshots/6193524/19_mostlysunny.gif" alt="" class="iconWeather">
-//         <div class="pin">
-//             <img src="https://www.iconpacks.net/icons/2/free-location-pin-icon-2965-thumb.png" alt="" class="pin-icon"> Hermosillo
-//         </div>
-//     </div>
-// </div>
-
     (weather.list).forEach((element) =>   {
         const weatherHour = document.getElementById('weather-container2')
         const ele = document.createElement("div");
@@ -167,8 +160,7 @@ function addWeatherUI(weather) {
                 </div>
             </div>  
         </div>        
-                `, weatherHour.appendChild(ele)                   
-                
+                `, weatherHour.appendChild(ele)                                   
     });        
 }
 
@@ -204,6 +196,26 @@ function clearUI() {
     <br>                 
         `;        
         weatherNow.appendChild(eleme);        
+
+            const weatherWidget = document.getElementById("weather-widget");
+    const elem = document.createElement("div");
+    elem.innerHTML = `
+    
+    <div id = "weather-widget" class="weather-widget"> 
+    <div class="weather-widget-content">
+        <div id="clock" class="clock"></div>
+        <div id="date" class="current-date"></div>
+        <img src="https://cdn.dribbble.com/users/2120934/screenshots/6193524/19_mostlysunny.gif" alt="" class="iconWeather">
+        <div class="pin">
+            <img src="https://www.iconpacks.net/icons/2/free-location-pin-icon-2965-thumb.png" alt="" class="pin-icon"> Hermosillo
+        </div>
+    </div>
+</div>
+
+    `; weatherWidget.appendChild(elem);
+
+    getCurrentDate();
+
 }
 
 function clearUI2() {
