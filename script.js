@@ -37,3 +37,14 @@ async function displayWeather() {
         //console.log(city2);
     }
 }
+
+function weatherHistory (weatherArray) {      
+    weatherArray.forEach((element) =>   {
+        const weatherList = document.getElementById('history-container')
+        const ele = document.createElement("div");
+        ele.innerHTML = `
+        <strong>Nombre de la ciudad: ${element.city.name}</strong>
+            <br>      
+            `, weatherList.appendChild(ele)    
+        });                
+    }
