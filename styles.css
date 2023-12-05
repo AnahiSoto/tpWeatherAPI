@@ -54,3 +54,265 @@ input:hover {
     font-size: 35px;
     font-family: 'Nunito Sans', sans-serif;
 }
+
+.iconWeather {
+    width: 300px;
+}
+
+p{
+    margin-bottom: 20px;
+}
+
+.fa-search {
+    color:white;
+    font-size: 16px;
+    transition: all 0.5s ease-in-out;
+}
+
+.fa-search:hover {
+    cursor: pointer;   
+    color: #24434b; 
+}
+
+
+select {
+    border-radius: 50px;
+    font-size: 21px;
+    background-color: rgb(246, 246, 246);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+select option {
+    transition: all 0.5s ease-in-out;
+    background: white;
+}
+
+select option:hover {
+    color: red;
+}
+
+.izquierda {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;    
+    height: 100%;
+    width: 380px;    
+}
+
+
+
+.buscar {
+font-size: 18px;
+border-radius: 50px;
+color: white;
+background-color: #4e80cf;
+transition: all 0.5s ease-in-out;
+border:none;
+height: 30px;
+width: 110px;
+margin-left: 10px;
+}
+
+.buscar:hover {
+background-color: #c3d2e9;        
+color: #24434b;
+}
+
+.clear {
+font-size: 18px;
+border-radius: 50px;
+color: white;
+background-color: #4e80cf;
+transition: all 0.5s ease-in-out;
+border:none;
+height: 30px;
+width: 110px;
+margin-left: 10px;
+}
+
+.clear:hover {
+    background-color: #c3d2e9;        
+    color: #24434b;
+}
+
+/*Temperatura Now*/
+.icon-principal {
+    margin-top: 20px;
+    height: 120px;
+    width: 120px;      
+}
+
+.iconNow {
+    justify-content: center;
+    margin-bottom: 0px;
+}
+.tempNow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.temp {
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;    
+    justify-content: center;
+}
+
+.desc {
+    font-family: 'Poppins', sans-serif;
+
+}
+
+hr {
+    width: 150px    ;
+}
+
+/* cards de temperaturas*/
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+/*
+.weather-container2 {
+}
+*/
+
+.tempsHour {
+    border: 1px solid blue;
+    width: 140px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.tempsHour:hover {
+    border: 2px solid #24434b;
+}
+
+.tempsInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.derecha {
+    background-color: rgb(236, 234, 234);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date {
+    background-color: #4e80cf;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.iconss {
+    display: flex;
+    justify-content: center;
+}
+
+.iconNormal {    
+height: 70px;
+width: 70px;
+}
+
+.miniContainers {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.box {
+    margin-bottom: 7px;
+    margin-right: 5px;
+    width: 100px;   
+    background-color: #e2e5ea;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.secundaryButtons {    
+font-size: 18px;
+border-radius: 50px;
+color: white;
+background-color:#6998db;
+transition: all 0.5s ease-in-out;
+border:none;
+height: 30px;
+margin-left: 10px;
+}
+
+.cityInfo {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;    
+}
+
+.info {
+    font-size: 18px;
+    border-radius: 50px;
+    color: white;
+    background-color: #4e80cf;
+    transition: all 0.5s ease-in-out;
+    border:none;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.info:hover {
+    background-color: #c3d2e9;        
+    color: #24434b;
+}
+
+.weather-widget {
+   display: flex;
+   border: 1px solid green;
+}
+
+.weather-widget-content {
+    margin: 10px;
+    border: 1px solid blue;
+    padding: 10px;
+}
+
+.clock {
+    text-align: center;
+    border: 1px solid red;   
+    font-size: 70px;
+    font-family: 'Nunito Sans', sans-serif;
+} 
+
+.current-date {
+    border: 1px solid yellow;
+    text-align: end;
+}
