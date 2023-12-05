@@ -32,10 +32,11 @@ input {
     border: none; 
     margin-right: 10px;
     margin-bottom: 10px;
+    transition: all 0.5s ease-in-out;
 }
 
 input:hover {
-    border: none;
+    background-color: rgb(210, 210, 210);    
 }
 
 .title{
@@ -59,6 +60,7 @@ input:hover {
     width: 300px;
 }
 
+
 p{
     margin-bottom: 20px;
 }
@@ -81,15 +83,16 @@ select {
     background-color: rgb(246, 246, 246);
     margin-bottom: 20px;
     width: 100%;
+    transition: all 0.5s ease-in-out;
 }
 
 select option {
-    transition: all 0.5s ease-in-out;
-    background: white;
+    background: rgb(255, 255, 255);
 }
 
-select option:hover {
-    color: red;
+select:hover {
+    background-color: rgb(210, 210, 210);    
+
 }
 
 .izquierda {
@@ -140,7 +143,7 @@ margin-left: 10px;
 .icon-principal {
     margin-top: 20px;
     height: 120px;
-    width: 120px;      
+    width: 120px;                
 }
 
 .iconNow {
@@ -191,11 +194,11 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    transition: all 0.5s ease-in-out;    
 }
 
 .tempsHour:hover {
-    border: 2px solid #24434b;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .tempsInfo {
@@ -252,6 +255,11 @@ width: 70px;
     background-color: #e2e5ea;
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
+    transition: all 0.5s ease-in-out;
+}
+
+.box:hover {
+    background-color: #b2b3b5;
 }
 
 .secundaryButtons {    
@@ -287,6 +295,7 @@ margin-left: 10px;
     height: 30px;
     margin-left: 10px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .info:hover {
@@ -295,24 +304,52 @@ margin-left: 10px;
 }
 
 .weather-widget {
-   display: flex;
-   border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    
 }
 
+
 .weather-widget-content {
-    margin: 10px;
-    border: 1px solid blue;
-    padding: 10px;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    /*margin: 10px;    
+    */
+    padding: 20px;
+    background-color: white;
+    border-radius: 30px;
+    justify-content: center;
+    
+}
+
+.weather-widget-content:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .clock {
     text-align: center;
-    border: 1px solid red;   
     font-size: 70px;
     font-family: 'Nunito Sans', sans-serif;
+    color: #4e80cf;
+    background-color: #c3d2e937;
+    border-radius: 30px;
+    padding: 10px;
 } 
 
 .current-date {
-    border: 1px solid yellow;
-    text-align: end;
+    margin-top: 10px;
+    text-align: center;
+    color: #4e80cf;
+}
+
+.pin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pin-icon {
+    width: 30px;
+    text-align: center;
 }

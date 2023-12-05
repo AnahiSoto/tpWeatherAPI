@@ -55,6 +55,7 @@ async function displayWeather() {
     const cityName = document.getElementById("city").value;
 
     if (cityName === "" || cityName === undefined) {
+        messageUI("Ingresa la ciudad");
         alert("Ingresa la ciudad");     
         return;
     } else {        
@@ -75,9 +76,11 @@ function weatherHistory (weatherArray) {
         const weatherList = document.getElementById('history-container')
         const ele = document.createElement("div");
         ele.innerHTML = `
+        <div class = "weather-widget-content "> 
         <strong>Nombre de la ciudad: ${element.city.name}</strong>
-            <br>      
-            `, weatherList.appendChild(ele)    
+        </div>
+        <br>      
+        `, weatherList.appendChild(ele)    
         });                
 }
 
@@ -99,13 +102,16 @@ function weatherHistory (weatherArray) {
         try {                        
             const response = await fetch (`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&appid=${apiKey}`);
             if (response.status ===404)  {        
-            messageUI(`Asegúrate de haber ingresado los datos correctamente`);                                                
+            messageUI(`Asegúrate de haber ingresado los datos correctamente`); 
+
+            setTimeout(() => {
+                document.getElementById("clear").hidden = true;
+                document.getElementById("history").hidden = true;
+                document.getElementById("compare").hidden = true;                                               
+            }, 200) ;
             return;
         }        
-        clearUI2();   
-            document.getElementById("clear").hidden = false;
-            document.getElementById("history").hidden = false;
-            document.getElementById("compare").hidden = false;
+        clearUI2();              
             return await response.json();        
         } catch (e) {            
             messageUI("Bad Connection! Try Again");        
@@ -113,6 +119,10 @@ function weatherHistory (weatherArray) {
     }
 
 function addWeatherUI(weather) {  
+
+    document.getElementById("clear").hidden = false;
+    document.getElementById("history").hidden = false;
+    document.getElementById("compare").hidden = false;
 
     document.getElementById("weather-widget").innerHTML ="";
 
@@ -128,6 +138,18 @@ function addWeatherUI(weather) {
     </div>
     `;
     weatherList.appendChild(el);
+
+    //const weather
+//     <div id = "weather-widget" class="weather-widget"> 
+//     <div class="weather-widget-content">
+//         <div id="clock" class="clock"></div>
+//         <div id="date" class="current-date"></div>
+//         <img src="https://cdn.dribbble.com/users/2120934/screenshots/6193524/19_mostlysunny.gif" alt="" class="iconWeather">
+//         <div class="pin">
+//             <img src="https://www.iconpacks.net/icons/2/free-location-pin-icon-2965-thumb.png" alt="" class="pin-icon"> Hermosillo
+//         </div>
+//     </div>
+// </div>
 
     (weather.list).forEach((element) =>   {
         const weatherHour = document.getElementById('weather-container2')
@@ -145,9 +167,9 @@ function addWeatherUI(weather) {
                 </div>
             </div>  
         </div>        
-                `, weatherHour.appendChild(ele)        
+                `, weatherHour.appendChild(ele)                   
+                
     });        
-
 }
 
 //exclusivo botón limpiar
@@ -171,14 +193,15 @@ function clearUI() {
 
     <div class="title">Hey, there</div>
     Check the weather of the city u want
-    <div class="welcomeImg">
-        <img src="https://cdn.dribbble.com/users/2120934/screenshots/6193524/19_mostlysunny.gif" alt="" class="iconWeather">
-    </div> 
+        <div class="welcomeImg">
+            <img src="https://i0.wp.com/welcometoelmundo.com/wp-content/uploads/2018/08/mapamundi-acuarela-mapa-mundo-wasabi-basico.jpg?fit=900%2C683&ssl=1" alt="" class="iconWeather">
+        </div> 
     <p>Try Navojoa and the country is "México - MX"</p>
     <br>
     <br>                  
-    <br>  
-    </div>
+    <br>                              
+    <br>                              
+    <br>                 
         `;        
         weatherNow.appendChild(eleme);        
 }
@@ -195,6 +218,7 @@ function clearUI2() {
     document.getElementById("clear").hidden = true;
     document.getElementById("history").hidden = true;
     document.getElementById("compare").hidden = true;
+    document.getElementById("weather-widget").innerHTML = "";
 }
 
 function messageUI(message) { 
@@ -220,9 +244,11 @@ function compareTemps(weatherNowArray) {
     const coldestCity = document.getElementById("coldestCity");
     const element = document.createElement("div");
     element.innerHTML = `
-        <strong> Nombre de la ciudad: </strong> ${weatherNowArray[0].name}
+    <div class = "weather-widget-content "> 
+    <strong class => Nombre de la ciudad: </strong> ${weatherNowArray[0].name}
         <br>
         <strong> Temp: </strong> ${weatherNowArray[0].main.temp} °C
+        </div>
     `;
     coldestCity.appendChild(element);
 }
@@ -237,10 +263,7 @@ async function getWeatherNow (city) {
             messageUI("City Not Found");
             return;
         }                
-        clearUI2();   
-        document.getElementById("clear").hidden = false;
-        document.getElementById("history").hidden = false;
-        document.getElementById("compare").hidden = false;
+        clearUI2();       
         return await response.json();
         } catch (e) {            
             messageUI("Bad Connection! Try Again");        
