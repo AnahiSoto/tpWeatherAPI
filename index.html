@@ -7,72 +7,76 @@
 </head>
 <body>
 
-    <div class="izquierda">
+    <div class="containerr">
+        <div class="izquierda">
 
-        <div class="data">
+            <div class="data">
 
-            <div class="look" style="border: none;">
-                <input type="text"  placeholder=" Enter City Name" id = "city"/>                                        
-                <button id="search" class="buscar">
-                    <i class="fa fa-search" aria-hidden="true" id = "search"></i>                    
-                    Search   
-                </button>                                    
-        </div>
+                <div class="look" style="border: none;">
+                    <input type="text"  placeholder=" Enter City Name" id = "city"/>                                        
+                    <button id="search" class="buscar">
+                        <i class="fa fa-search" aria-hidden="true" id = "search"></i>                    
+                        Search   
+                    </button>                                    
+            </div>
 
-    <select name="" id="countries">                   
-        <option value="0" disabled selected>Click to select the country</option>
-        <option value="MX">México - MX</option>
-        <option value="CO">Colombia - CO</option>
-        <option value="UK">Gran Bretaña - UK</option>
-        <option value="JP">Japón - JP</option>
-        <option value="AR">Argentina - AR</option>
-        <option value="AU">Australia - AU</option>
-        <option value="BR">Brasil - BR</option>
-        <option value="CL">Chile - CL</option>
-    </select>
-</div>
-
-    <div id="weatherNow">
-        <div class="title">Hey, there</div>
-        Check the weather of the city u want
-        <div class="welcomeImg">
-            <img src="https://cdn.dribbble.com/users/2120934/screenshots/6193524/19_mostlysunny.gif" alt="" class="iconWeather">
-        </div> 
-        <p>Try Navojoa and the country is "México - MX"</p>
-        <br>
-        <br>                  
-        <br>                
-
-        <!--
-            <img src="https://www.wisecrop.com/public/uploads/images/0afd71b2b5724fe7037d5b712c048378.gif" alt="" class="iconWeather">
-            <img src="https://i.pinimg.com/originals/53/32/38/533238dd9a8ebfeaf7a8f4d4c2cabab6.gif" alt="" class="iconWeather">
-            --->
-        </div>
-        
-        <button id="clear" class="clear" hidden = "hidden">Limpiar</button>
-</div>
-
-<div class="derecha">                
-    <br>
-    <div id="message"></div>
-    <div id="weather-container"></div>      
-    <div id = "weather-widget" class="weather-widget"> 
-        <div class="weather-widget-content">
-            holaa
-        </div>
+        <select name="" id="countries">                   
+            <option value="0" disabled selected>Click to select the country</option>
+            <option value="MX">México - MX</option>
+            <option value="CO">Colombia - CO</option>
+            <option value="UK">Gran Bretaña - UK</option>
+            <option value="JP">Japón - JP</option>
+            <option value="AR">Argentina - AR</option>
+            <option value="AU">Australia - AU</option>
+            <option value="BR">Brasil - BR</option>
+            <option value="CL">Chile - CL</option>
+        </select>
     </div>
-                    
-<div id="weather-container2" class="row"></div>  
+
+        <div id="weatherNow">
+            <div class="title">Hey, there</div>
+            Check the weather of the city u want
+            <div class="welcomeImg">
+                <img src="https://cdn.dribbble.com/users/2120934/screenshots/6193524/19_mostlysunny.gif" alt="" class="iconWeather">
+            </div> 
+            <p>Try Navojoa and the country is "México - MX"</p>
+            <br>
+            <br>                  
+            <br>                
+
+            <!--
+                <img src="https://www.wisecrop.com/public/uploads/images/0afd71b2b5724fe7037d5b712c048378.gif" alt="" class="iconWeather">
+                <img src="https://i.pinimg.com/originals/53/32/38/533238dd9a8ebfeaf7a8f4d4c2cabab6.gif" alt="" class="iconWeather">
+                --->
+            </div>
+            
+            <button id="clear" class="clear" hidden = "hidden">Limpiar</button>
+    </div>
+       
+        <div class="derecha">                
+            <br>
+            <div id="message"></div>
+            <div id="weather-container"></div>      
+            <div id = "weather-widget" class="weather-widget"> 
+                <div class="weather-widget-content">
+                    holaa
+                </div>
+            </div>
+                            
+        <div id="weather-container2" class="row"></div>  
+            
+        <div class="history">
+                <div class="buttons">
+                    <button id = "compare" class="info" hidden = "hidden">Haz clic para saber la ciudad más fría consultada</button>
+                    <div id = "coldestCity"></div>
+                    <button id = "history" class="info" hidden = "hidden">Historial de ciudades consultadas</button>
+                    <div id = "history-container"></div>
+                </div>                                      
+            </div>
+        </div>
     
-<div class="history">
-        <div class="buttons">
-            <button id = "compare" class="info" hidden = "hidden">Haz clic para saber la ciudad más fría consultada</button>
-            <div id = "coldestCity"></div>
-            <button id = "history" class="info" hidden = "hidden">Historial de ciudades consultadas</button>
-            <div id = "history-container"></div>
-        </div>                                      
+            
     </div>
-</div>
 
     <script src="script.js"></script>
 </body>
